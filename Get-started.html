@@ -79,7 +79,7 @@
 
 							<ul class="menu-container">
 								<li class="menu-item current"><a class="menu-link" href="index.html"><div>Home</div></a></li>
-								<li class="menu-item"><a class="menu-link" href="Paradigm.html"><div>Paradigm</div></a></li>
+								<!-- <li class="menu-item"><a class="menu-link" href="Paradigm.html"><div>Paradigm</div></a></li> -->
 								<li class="menu-item"><a class="menu-link" href="Framework.html"><div>Framework</div></a></li>
 								<li class="menu-item"><a class="menu-link" href="https://18813157325-streamlit-app-test-co50q2.streamlit.app/"><div>Demos</div></a>
 									<!-- <ul class="sub-menu-container rounded-bottom">
@@ -126,96 +126,74 @@
 			<div class="container mycontent">
 				<br>
 				<br>
-				We separate the source code to three main parts: enhancing the given texts with knowledge, constructing a knowledge-aware model and training the model.<br>
-				We formalize a pipeline for these three steps so users can achieve our Unified Knowledge-Enhanced Paradigm easily.
-				Before processing the input text, users should prepare the corresponding knowledge sources, which will be downloaded automatically.
-				Then, the Reader, Enhancer and Processor class should be initialized to generate the knowledge-enhanced input of the models.
-				Moreover, the T-Model, Metric, Loss and Optimizer class should be initialized before added to Trainer class. Users should initialize the K-Model class as the knowledge-enhanced encoder of the T-Model class.
+				<!-- We show an concrete example of training an agent on the knowledge-grounded dialoguetask using dataset Wizards of Wikipedia. -->
 				<br>
 				<br>
-				<h3>Enhancing the given texts with knowledge </h3>
-				<pre>from cogktr import *</pre>
+				<h2>Training an agent on the knowledge-grounded dialogue task</h2>
+				<h3>Import the modules </h3>
+				<!-- <pre>from cogktr import *</pre> -->
 
-				Load the raw dataset.
-				<pre class="my_code" >reader = Sst2Reader(raw_data_path="./datapath/text_classification/SST_2/raw_data")
-train_data, dev_data, test_data = reader.read_all()
-vocab = reader.read_vocab()</pre>
-
-				Acquire and represent external knowledge.
+				<!-- Load the raw dataset. -->
 				<pre class="my_code" >
-enhancer = WorldEnhancer(knowledge_graph_path="./datapath/knowledge_graph",
-                         cache_path="./datapath/text_classification/SST_2/enhanced_data",
-                         cache_file="world_data",
-                         reprocess=True,
-                         load_entity_desc=True,
-                         load_entity_embedding=False,
-                         load_entity_kg=False)
-enhanced_train_dict = enhancer.enhance_train(datable=train_data,
-                                             enhanced_key_1="sentence",
-                                             return_entity_desc=True)
-enhanced_dev_dict = enhancer.enhance_dev(datable=dev_data,
-                                         enhanced_key_1="sentence",
-                                         return_entity_desc=True)
-enhanced_test_dict = enhancer.enhance_test(datable=test_data,
-                                           enhanced_key_1="sentence",
-                                           return_entity_desc=True)</pre>
-
-				Inject the knowledge into the model.
-				<pre class="my_code" >processor = Sst2ForKtattProcessor(plm="bert-base-cased", max_token_len=128, vocab=vocab)
-train_dataset = processor.process_train(data=train_data, enhanced_dict=enhanced_train_dict)
-dev_dataset = processor.process_dev(data=dev_data, enhanced_dict=enhanced_dev_dict)
-test_dataset = processor.process_test(data=test_data, enhanced_dict=enhanced_test_dict)</pre>
-
-				<br>
-				<h3>Construct the knowledge-aware model.</h3>
-				<pre class="my_code" >
+from cogagent import *
 import torch
-plm = PlmBertModel(pretrained_model_name="bert-base-cased")
-model = BaseTextClassificationModel(plm=plm, vocab=vocab)
-metrics = BaseClassificationMetric(mode="multi")
-loss = torch.nn.CrossEntropyLoss()
-optimizer = torch.optim.Adam(model.parameters(), lr=0.000001)
-					</pre>
+import torch.nn as nn
+import torch.optim as optim
+</pre>
 
-				<pre class="my_code" >
-device, output_path = init_cogktr(
-    device_id=0,
-    output_path="./datapath/text_classification/SST_5/experimental_result",
-    folder_tag="simple_test",
+<h3>Init the logger, device and experiment result saving dir</h3>
+<pre class="my_code" >
+device, output_path = init_cogagent(
+	device_id=8,
+	output_path=datapath,
+	folder_tag="run_diffks_on_wow",
 )
-trainer = Trainer(model,
-                  train_dataset,
-                  dev_data=dev_dataset,
-                  n_epochs=2000,
-                  batch_size=100,
-                  loss=loss,
-                  optimizer=optimizer,
-                  scheduler=None,
-                  metrics=metric,
-                  train_sampler=None,
-                  dev_sampler=None,
-                  drop_last=False,
-                  gradient_accumulation_steps=1,
-                  num_workers=5,
-                  print_every=None,
-                  scheduler_steps=None,
-                  validate_steps=100,
-                  save_steps=1000,
-                  output_path=output_path,
-                  grad_norm=1,
-                  use_tqdm=True,
-                  device=device,
-                  callbacks=None,
-                  metric_key=None,
-                  fp16=False,
-                  fp16_opt_level='O1',
-                  )
+
+</pre>
+
+<h3>Choose utterance reader</h3>
+<pre class="my_code" >
+
+reader = WoWReader(raw_data_path=raw_data_path)
+train_data, dev_data, test_data = reader.read_all()
+vocab = reader.read_vocab()
+</pre>
+
+<h3>Choose data processor </h3>
+<pre class="my_code" >
+ 
+# In the training phase, no retriever is selected as the knowledge is provided by dataset
+processor = WoWForDiffksProcessor(max_token_len=512, vocab=vocab, debug=False)
+train_dataset = processor.process_train(train_data)
+dev_dataset = processor.process_dev(dev_data)
+test_dataset = processor.process_test(test_data)
+</pre>
+
+<h3> Choose response generator</h3>
+<pre class="my_code" >
+
+ 
+model = DiffKSModel()
+metric = BaseKGCMetric(default_metric_name="bleu-4",vocab=vocab)
+loss = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.0001)
+</pre>
+
+<h3> Start Training</h3>
+<pre class="my_code" >
+# Use the provided Trainer class to start the model training process
+trainer = Trainer(model,train_dataset,dev_data=test_dataset,n_epochs=40,batch_size=2,
+					loss=loss,optimizer=optimizer,scheduler=None,metrics=metric,
+					drop_last=False,gradient_accumulation_steps=1,num_workers=5,
+					validate_steps=2000,save_by_metric="bleu-4",save_steps=None,
+					output_path=output_path,grad_norm=1,
+					use_tqdm=True,device=device,
+					fp16_opt_level='O1',
+					)
+trainer.train()
 					</pre>
 
-				<br>
-				<h3>Train the model </h3>
-				<pre class="my_code" >trainer.train()</pre>
-
+ 
 
 			</div>
 		</section><!-- #content end -->
@@ -237,7 +215,7 @@ trainer = Trainer(model,
 	
 							<div class="col-12 col-lg-auto text-center text-lg-end">
 								<div class="copyrights-menu copyright-links clearfix">
-									<a href="index.html">Home</a>/<a href="paradigm.html">Paradigm</a>/<a href="framework.html">Framework</a>
+									<a href="index.html">Home</a>/<a href="framework.html">Framework</a>
 								</div>
 							</div>
 						</div>
