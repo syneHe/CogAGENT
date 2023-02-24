@@ -113,8 +113,8 @@
 			<div class="container clearfix">
 				<div class="row align-items-center">
 					<div class="col-md-8">
-						<h1 class="nott mb-5" data-animate="zoomIn">Make Agents More Conversational</h1>
-						<span data-animate="zoomIn" data-delay="300">A Multimodal, Knowledgable and Controllable Toolkit for	Building Conversational Agents.</span>
+						<h1 class="nott mb-5" data-animate="zoomIn">Multimodal, Knowledgeable and Controllable Agents in Dialogue Systems</h1>
+						<span data-animate="zoomIn" data-delay="300">A Multimodal, Knowledgeable and Controllable Toolkit for Building Conversational Agents</span>
 						<a href="Get-started.html" class="button button-large button-circle ms-0 mt-5 px-4" data-animate="zoomIn" data-delay="500">Get Started</a>
 					</div>
 					<!-- <div class="col-md-4">
@@ -156,7 +156,7 @@
 					<div class="container">
 						<div class="heading-block center mx-auto" style="max-width: 700px">
 							<h2 class="mb-3">Contribution</h2>
-							<p>Most existing conversational agents solely rely on a single text modality for dialogue context, and lack factual knowledge, as well as the ability to control the generated responses.</p>
+							<!-- <p>Most existing conversational agents solely rely on a single text modality for dialogue context, and lack factual knowledge, as well as the ability to control the generated responses.</p> -->
 						</div>
 						<div class="clear"></div>
 
@@ -170,8 +170,8 @@
 												<img src="demos/seo/images/icons/experience.svg" alt="Feature Icon" class="bg-transparent rounded-0">
 											</div>
 											<div class="fbox-content">
-												<h3 class="nott ls0 text-larger">Multimodal, knowledgeable and controllable conversational frameworks</h3>
-												<p>Multimodal agent implements Perception, Response, Enhancement and Embodied functions for modeling multimodal dialogue context. Knowledgeable agent integrates Structured Knowledge, Unstructured Knowledge and Implicit Knowledge to enhance dialogue generation. Controllable agent constructs Empathic Reply and Dialogue Safety to make response generation under control.</p>
+												<h3 class="nott ls0 text-larger">A multimodal, knowledgeable and controllable conversational framework </h3>
+												<p>We propose a unified framework named CogAGENT, incorporating Multimodal Module, Knowledgeable Module and Controllable Module to conduct multimodal interaction, generate knowledgeable response and make replies under control in real scenarios.</p>
 											</div>
 										</div>
 									</div>
@@ -186,8 +186,8 @@
 												<img src="demos/seo/images/icons/research.svg" alt="Feature Icon" class="bg-transparent rounded-0">
 											</div>
 											<div class="fbox-content">
-												<h3 class="nott ls0 text-larger">Comprehensive conversational models, metrics and datasets</h3>
-												<p>CogAGENT implements 17 conversational models covering task-oriented dialogue systems, open-domain dialogue systems and question answering systems. Moreover, it provides 8 conversational metrics including ROUGE, BLEU and so on. Meanwhile, our toolkit integrates 11 classical conversational datasets to one-click import.</p>
+												<h3 class="nott ls0 text-larger">Comprehensive conversational models, datasets and metrics</h3>
+												<p>CogAGENT implements 16 conversational models covering task-oriented dialogue, open-domain dialogue and question-answering tasks. We also integrate some widely used conversational datasets and metrics to verify the performance of models.</p>
 											</div>
 										</div>
 									</div>
@@ -202,8 +202,8 @@
 												<img src="demos/seo/images/icons/globe.svg" alt="Feature Icon" class="bg-transparent rounded-0">
 											</div>
 											<div class="fbox-content">
-												<h3 class="nott ls0 text-larger">Open-sourced and modularized conversational toolkits</h3>
-												<p>CogAGENT is proposed as an open source toolkit. Hence, users can modify codes for their own customised models or datasets. Moreover, It implements comprehensive conversational agents in a modularized interface. Our toolkits decouple codes and present easy-to-use modules named Reader, Processor, Model, Metric and Trainer to provide a low barrier entry for developers and researchers. </p>
+												<h3 class="nott ls0 text-larger">Open-source and modularized conversational toolkit</h3>
+												<p>We release CogAGENT as an open-source toolkit and modularize conversational agents to provide easy-to-use interfaces. Hence, users can modify codes for their own customized models or datasets. </p>
 											</div>
 										</div>
 									</div>
@@ -218,8 +218,8 @@
 												<img src="demos/seo/images/icons/optimizing.svg" alt="Feature Icon" class="bg-transparent rounded-0">
 											</div>
 											<div class="fbox-content">
-												<h3 class="nott ls0 text-larger">Oline dialogue system</h3>
-												<p>We have decoupled and modularized them flexibly to make users more convenient for development and research. We have also released a playful online conversational system, which support conversational agents interacting with users.</p>
+												<h3 class="nott ls0 text-larger">Online dialogue system</h3>
+												<p>We release an online system, which supports conversational agents to interact with users. We also provide a short video to illustrate how to use it.</p>
 											</div>
 										</div>
 									</div>
@@ -245,6 +245,85 @@
 								<!--							<br>-->
 								<p>BaseModel class is the base class of all models in CogKGE. BaseModel class organizes code into three basic sections: (1) forward function for training, (2) embedding function for getting the embedding of entities and relations, (3) scoring function for computing the score of triples. Model module consists of four parts: translation distance models, semantic matching models, graph neural network-based models and transformer-based models.
 									We summarize the models in the following table:</p>
+
+								
+									<table class="greyGridTable" style="border:1px solid black;" >
+										<thead>
+										<tr style="border:1px solid black;">
+											<td style="border:1px solid black;">Dataset Name</td>
+											<td style="border:1px solid black;">Category</td>
+											<td style="border:1px solid black;">Reference</td>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<td style="border:1px solid black;">MultiWOZ 2.0</td>
+											<td style="border:1px solid black;">Fundamental</td>
+											<td style="border:1px solid black;">\citealp{multiwoz2.0}</td>
+										</tr>
+										<tr>
+											<td>MultiWOZ 2.1</td>
+											<td>Fundamental</td>
+											<td>\citealp{multiwoz2.1}</td>
+										</tr>
+										<tr>
+											<td>Chinese chitchat Dataset</td>
+											<td>Fundamental</td>
+											<td>\href{https://github.com/yangjianxin1/GPT2-chitchat}{Chinese chitchat}</td>
+										</tr>
+										<tr>
+											<td>MOD</td>
+											<td>Multimodal</td>
+											<td>\href{https://openai.weixin.qq.com/dstc/ DescriptionEN.}{DSTC10-Track1}</td>
+										</tr>
+										<tr>
+											<td>MMConvQA</td>
+											<td>Multimodal</td>
+											<td>\citealp{mmcoqa}</td>
+										</tr>
+										<tr>
+											<td>OK-VQA</td>
+											<td>Multimodal</td>
+											<td>\citealp{okvqa}</td>
+										</tr>
+										<tr>
+											<td>VQAv2</td>
+											<td>Multimodal</td>
+											<td>\citealp{vqav2}</td>
+										</tr>
+										<tr>
+											<td>WAY</td>
+											<td>Multimodal</td>
+											<td>\citealp{way}</td>
+										</tr>
+										<tr>
+											<td>Wizard of Wikipedia</td>
+											<td>Knowledgeable</td>
+											<td>\citealp{wow_dataset}</td>
+										</tr>
+										<tr>
+											<td>Holl-E</td>
+											<td>Knowledgeable</td>
+											<td>\citealp{holl_e_dataset}</td>
+										</tr>
+										<tr>
+											<td>OpenDialKG</td>
+											<td>Knowledgeable</td>
+											<td>\citealp{opendialkg_dataset}</td>
+										</tr>
+										<tr>
+											<td>DIASAFETY</td>
+											<td>Controllable</td>
+											<td>\citealp{sun-etal-2022-safety}</td>
+										</tr>
+										<tr>
+											<td>EmpatheticDialogues</td>
+											<td>Controllable</td>
+											<td>\citealp{empathetic_dialogue_dataset}</td>
+										</tr>
+										</tbody>
+									</table>
+
 								<table class="greyGridTable" style="border:1px solid black;" >
 									<!--					<table class="w3-hover-green" >-->
 									<thead>
