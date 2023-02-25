@@ -56,7 +56,7 @@
 							============================================= -->
 							<ul id="top-social">
 								<li><a href="https://github.com/CogNLP/CogAGENT/" class="si-facebook" target="_blank"><span class="ts-icon"><i class="icon-github"></i></span>
-								<li><a href="https://youtu.be/SrvXrXdDiVY" class="si-youtube" target="_blank"><span class="ts-icon"><i class="icon-youtube"></i></span>
+								<li><a href="https://www.youtube.com/watch?v=SE0SEeiAmXI" class="si-youtube" target="_blank"><span class="ts-icon"><i class="icon-youtube"></i></span>
 							</ul><!-- #top-social end -->
 	
 						</div>
@@ -81,6 +81,7 @@
 								<li class="menu-item current"><a class="menu-link" href="index.html"><div>Home</div></a></li>
 								<!-- <li class="menu-item"><a class="menu-link" href="Paradigm.html"><div>Paradigm</div></a></li> -->
 								<li class="menu-item"><a class="menu-link" href="Framework.html"><div>Framework</div></a></li>
+								<li class="menu-item"><a class="menu-link" href="Get-started.html"><div>Get started</div></a></li>
 								<li class="menu-item"><a class="menu-link" href="http://210.75.240.137:10000/"><div>Demos</div></a>
 									<!-- <ul class="sub-menu-container rounded-bottom">
 										<li class="menu-item"><a class="menu-link" href="Home.html"><div>Open domain question answering</div></a></li>
@@ -114,7 +115,7 @@
 				<div class="row align-items-center">
 					<div class="col-md-8">
 						<h1 class="nott mb-5" data-animate="zoomIn">Multimodal, Knowledgeable and Controllable Agents in Dialogue Systems</h1>
-						<span data-animate="zoomIn" data-delay="300">A Multimodal, Knowledgeable and Controllable Toolkit for Building Conversational Agents</span>
+						<span data-animate="zoomIn" data-delay="300">CogsAGENT provides 17 models and integrate a variety of datasets covered above features, which decouple and modularize them flexibly to make users more convenient for development and research.</span>
 						<a href="Get-started.html" class="button button-large button-circle ms-0 mt-5 px-4" data-animate="zoomIn" data-delay="500">Get Started</a>
 					</div>
 					<!-- <div class="col-md-4">
@@ -187,7 +188,7 @@
 											</div>
 											<div class="fbox-content">
 												<h3 class="nott ls0 text-larger">Comprehensive conversational models, datasets and metrics</h3>
-												<p>CogAGENT implements 16 conversational models covering task-oriented dialogue, open-domain dialogue and question-answering tasks. We also integrate some widely used conversational datasets and metrics to verify the performance of models.</p>
+												<p>CogAGENT implements 17 conversational models covering task-oriented dialogue, open-domain dialogue and question-answering tasks. We also integrate some widely used conversational datasets and metrics to verify the performance of models.</p>
 											</div>
 										</div>
 									</div>
@@ -227,14 +228,12 @@
 							</div>
 	
 						</div>
-
-						
 						<!-- table -->
 					<div class="section mb-0">
 						<div class="container">
 							<div class="heading-block border-bottom-0 center">
 								<!--							<div class="badge rounded-pill badge-default">Causes</div>-->
-								<h2 class="mb-3">Enhancer module details of CogKTR</h2>
+								<h2 class="mb-3">Availabel datasets of CogAGENT</h2>
 							</div>
 							<div class="row col-mb-30 align-content-stretch">
 
@@ -243,214 +242,303 @@
 								<!--							<h2>Model list</h2>-->
 								<!--							<div class="line1"></div>-->
 								<!--							<br>-->
-								<p>BaseModel class is the base class of all models in CogKGE. BaseModel class organizes code into three basic sections: (1) forward function for training, (2) embedding function for getting the embedding of entities and relations, (3) scoring function for computing the score of triples. Model module consists of four parts: translation distance models, semantic matching models, graph neural network-based models and transformer-based models.
-									We summarize the models in the following table:</p>
-
-								
-									<table class="greyGridTable" style="border:1px solid black;" >
-										<thead>
-										<tr style="border:1px solid black;">
-											<td style="border:1px solid black;">Dataset Name</td>
-											<td style="border:1px solid black;">Category</td>
-											<td style="border:1px solid black;">Reference</td>
-										</tr>
-										</thead>
-										<tbody>
-										<tr>
-											<td style="border:1px solid black;">MultiWOZ 2.0</td>
-											<td style="border:1px solid black;">Fundamental</td>
-											<td style="border:1px solid black;">\citealp{multiwoz2.0}</td>
-										</tr>
-										<tr>
-											<td>MultiWOZ 2.1</td>
-											<td>Fundamental</td>
-											<td>\citealp{multiwoz2.1}</td>
-										</tr>
-										<tr>
-											<td>Chinese chitchat Dataset</td>
-											<td>Fundamental</td>
-											<td>\href{https://github.com/yangjianxin1/GPT2-chitchat}{Chinese chitchat}</td>
-										</tr>
-										<tr>
-											<td>MOD</td>
-											<td>Multimodal</td>
-											<td>\href{https://openai.weixin.qq.com/dstc/ DescriptionEN.}{DSTC10-Track1}</td>
-										</tr>
-										<tr>
-											<td>MMConvQA</td>
-											<td>Multimodal</td>
-											<td>\citealp{mmcoqa}</td>
-										</tr>
-										<tr>
-											<td>OK-VQA</td>
-											<td>Multimodal</td>
-											<td>\citealp{okvqa}</td>
-										</tr>
-										<tr>
-											<td>VQAv2</td>
-											<td>Multimodal</td>
-											<td>\citealp{vqav2}</td>
-										</tr>
-										<tr>
-											<td>WAY</td>
-											<td>Multimodal</td>
-											<td>\citealp{way}</td>
-										</tr>
-										<tr>
-											<td>Wizard of Wikipedia</td>
-											<td>Knowledgeable</td>
-											<td>\citealp{wow_dataset}</td>
-										</tr>
-										<tr>
-											<td>Holl-E</td>
-											<td>Knowledgeable</td>
-											<td>\citealp{holl_e_dataset}</td>
-										</tr>
-										<tr>
-											<td>OpenDialKG</td>
-											<td>Knowledgeable</td>
-											<td>\citealp{opendialkg_dataset}</td>
-										</tr>
-										<tr>
-											<td>DIASAFETY</td>
-											<td>Controllable</td>
-											<td>\citealp{sun-etal-2022-safety}</td>
-										</tr>
-										<tr>
-											<td>EmpatheticDialogues</td>
-											<td>Controllable</td>
-											<td>\citealp{empathetic_dialogue_dataset}</td>
-										</tr>
-										</tbody>
-									</table>
+								<!--<p>BaseModel class is the base class of all models in CogKGE. BaseModel class organizes code into three basic sections: (1) forward function for training, (2) embedding function for getting the embedding of entities and relations, (3) scoring function for computing the score of triples. Model module consists of four parts: translation distance models, semantic matching models, graph neural network-based models and transformer-based models.
+									We summarize the models in the following table:</p>-->
 
 								<table class="greyGridTable" style="border:1px solid black;" >
 									<!--					<table class="w3-hover-green" >-->
 									<thead>
 									<tr style="border:1px solid black;">
-										<th style="border:1px solid black;">Components</th>
-										<th style="border:1px solid black;">Class</th>
-										<th style="border:1px solid black;">Functions</th>
-										<th style="border:1px solid black;">Tools</th>
+										<th style="border:1px solid black;">Dataset</th>
+										<th style="border:1px solid black;">Category</th>
+										<th style="border:1px solid black;">Reference</th>
 									</tr>
 									</thead>
 									<tbody>
-									<tr style="border:1px solid black;">
-										<td rowspan="5" style="border:1px solid black;">Tagger</td>
-										<td style="border:1px solid black;">
-											NerTagger
-										</td>
-										<td style="border:1px solid black;">identify entity mention spans</td>
-										<td style="border:1px solid black;">CogIE</td>
-									</tr>
+									
 									<tr style="border:1px solid black;">
 										<td style="border:1px solid black;">
-											ConceptNetTagger
+											MultiWOZ 2.0
 										</td>
-										<td style="border:1px solid black;">identify concept mention spans</td>
-										<td style="border:1px solid black;">spaCy</td>
-									</tr>
-									<tr style="border:1px solid black;">
-										<td style="border:1px solid black;">
-											WordNetTagger
-										</td>
-										<td style="border:1px solid black;">identify candidate texts spans</td>
-										<td style="border:1px solid black;">NLTK</td>
-									</tr>
-									<tr style="border:1px solid black;">
-										<td style="border:1px solid black;">
-											SrlTagger
-										</td>
-										<td style="border:1px solid black;">tag sentences and get semantics labeling</td>
-										<td style="border:1px solid black;">Stanza</td>
-									</tr>
-									<tr style="border:1px solid black;">
-										<td style="border:1px solid black;">
-											SyntaxTagger
-										</td>
-										<td style="border:1px solid black;">parse sentences and get dependency trees</td>
-										<td style="border:1px solid black;">AllenNLP</td>
+										<td style="border:1px solid black;">Fundamental</td>
+										<td style="border:1px solid black;">MultiWOZ - A Large-Scale Multi-Domain Wizard-of-Oz Dataset for Task-Oriented Dialogue Modelling</td>
 									</tr>
 
 									<tr style="border:1px solid black;">
-										<td rowspan="3" style="border:1px solid black;">Linker</td>
 										<td style="border:1px solid black;">
-											WikipediaLinker
+											MultiWOZ 2.1
 										</td>
-										<td style="border:1px solid black;">link entities to Wikipedia</td>
-										<td style="border:1px solid black;">CogIE</td>
+										<td style="border:1px solid black;">Fundamental</td>
+										<td style="border:1px solid black;">MultiWOZ 2.1: A Consolidated Multi-Domain Dialogue Dataset with State Corrections and State Tracking Baselines</td>
+										
 									</tr>
 									<tr style="border:1px solid black;">
 										<td style="border:1px solid black;">
-											ConceptNetLinker
+											Chinese chitchat Dataset
 										</td>
-										<td style="border:1px solid black;"> link concepts to ConceptNet</td>
-										<td style="border:1px solid black;">spaCy</td>
+										<td style="border:1px solid black;">Fundamental</td>
+										<td style="border:1px solid black;">Chinese chitchat</td>
 									</tr>
 									<tr style="border:1px solid black;">
 										<td style="border:1px solid black;">
-											WordNetLinker
+											MOD
 										</td>
-										<td style="border:1px solid black;">link candidate texts to WordNet</td>
-										<td style="border:1px solid black;">CogIE</td>
-									</tr>
-
-
-									<tr style="border:1px solid black;">
-										<td rowspan="4" style="border:1px solid black;">Searcher</td>
-										<td style="border:1px solid black;">
-											WikipediaSearcher
-										</td>
-										<td style="border:1px solid black;">query entity titles and text descriptions in Wikipedia</td>
-										<td style="border:1px solid black;">KILT </td>
+										<td style="border:1px solid black;">Multimodal</td>
+										<td style="border:1px solid black;">DSTC10-Track1</td>
+										
 									</tr>
 									<tr style="border:1px solid black;">
 										<td style="border:1px solid black;">
-											WikidataSearcher
+											MMConvQA
 										</td>
-										<td style="border:1px solid black;">look up triples and subgraphs in Wikidata</td>
-										<td style="border:1px solid black;">qwikidata</td>
+										<td style="border:1px solid black;">Multimodal</td>
+										<td style="border:1px solid black;">MMCoQA: Conversational Question Answering over Text, Tables, and Images</td>
+										
 									</tr>
 									<tr style="border:1px solid black;">
 										<td style="border:1px solid black;">
-											ConceptNetSearcher
+											OK-VQA
 										</td>
-										<td style="border:1px solid black;">search subgraphs and relation paths in ConceptNet</td>
-										<td style="border:1px solid black;">spaCy</td>
+										<td style="border:1px solid black;">Multimodal</td>
+										<td style="border:1px solid black;">Ok-vqa: A visual question answering benchmark requiring external knowledge</td>
+										
 									</tr>
 									<tr style="border:1px solid black;">
 										<td style="border:1px solid black;">
-											WordNetSearcher
+											VQAv2
 										</td>
-										<td style="border:1px solid black;">synonyms, example sentences, definitions and hypernyms</td>
-										<td style="border:1px solid black;">NLTK</td>
-									</tr>
-
-									<tr style="border:1px solid black;">
-										<td rowspan="3" style="border:1px solid black;">Embedder</td>
-										<td style="border:1px solid black;">
-											WikidataEmbedder
-										</td>
-										<td style="border:1px solid black;">convert Wikidata into continuous knowledge</td>
-										<td style="border:1px solid black;">CogKGE </td>
+										<td style="border:1px solid black;">Multimodal</td>
+										<td style="border:1px solid black;">Making the v in vqa matter: Elevating the role of image understanding in visual question answering</td>
+										
 									</tr>
 									<tr style="border:1px solid black;">
 										<td style="border:1px solid black;">
-											ConceptNetEmbedder
+											WAY
 										</td>
-										<td style="border:1px solid black;">convert ConceptNet into continuous knowledge</td>
-										<td style="border:1px solid black;">MHGRN</td>
+										<td style="border:1px solid black;">Multimodal</td>
+										<td style="border:1px solid black;">Where Are You? Localization from Embodied Dialog</td>
+										
 									</tr>
 									<tr style="border:1px solid black;">
 										<td style="border:1px solid black;">
-											WordNetEmbedder
+											Wizard of Wikipedia
 										</td>
-										<td style="border:1px solid black;">convert WordNet into continuous knowledge</td>
-										<td style="border:1px solid black;">CogKGE</td>
+										<td style="border:1px solid black;">Knowledgeable</td>
+										<td style="border:1px solid black;">Wizard of Wikipedia: Knowledge-Powered Conversational Agents</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											Holl-E
+										</td>
+										<td style="border:1px solid black;">Knowledgeable</td>
+										<td style="border:1px solid black;">Towards Exploiting Background Knowledge for Building Conversation Systems</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											OpenDialKG 
+										</td>
+										<td style="border:1px solid black;">Knowledgeable</td>
+										<td style="border:1px solid black;">OpenDialKG: Explainable Conversational Reasoning with Attention-based Walks over Knowledge Graphs</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											DIASAFETY
+										</td>
+										<td style="border:1px solid black;">Controllable</td>
+										<td style="border:1px solid black;">On the Safety of Conversational Models: Taxonomy, Dataset, and Benchmark</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											EmpatheticDialogues
+										</td>
+										<td style="border:1px solid black;">Controllable</td>
+										<td style="border:1px solid black;">Towards Empathetic Open-domain Conversation Models: A New Benchmark and Dataset</td>
+										
 									</tr>
 
 									</tbody>
 								</table>
+								
+								<br>
+
+								<!--						</div>-->
+
+							</div>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<div class="heading-block border-bottom-0 center">
+								<!--							<div class="badge rounded-pill badge-default">Causes</div>-->
+								<h2 class="mb-3">Enhancer module details of CogAGENT</h2>
+							</div>
+							<div class="row col-mb-30 align-content-stretch">
+
+								<!--						<div class="container mycontent">-->
+								<!--							<br>-->
+								<!--							<h2>Model list</h2>-->
+								<!--							<div class="line1"></div>-->
+								<!--							<br>-->
+								<!--<p>BaseModel class is the base class of all models in CogKGE. BaseModel class organizes code into three basic sections: (1) forward function for training, (2) embedding function for getting the embedding of entities and relations, (3) scoring function for computing the score of triples. Model module consists of four parts: translation distance models, semantic matching models, graph neural network-based models and transformer-based models.
+									We summarize the models in the following table:</p>-->
+
+								<table class="greyGridTable" style="border:1px solid black;" >
+									<!--					<table class="w3-hover-green" >-->
+									<thead>
+									<tr style="border:1px solid black;">
+										<th style="border:1px solid black;">Modal</th>
+										<th style="border:1px solid black;">Category</th>
+										<th style="border:1px solid black;">Reference</th>
+									</tr>
+									</thead>
+									<tbody>
+									
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											SUMBT
+										</td>
+										<td style="border:1px solid black;">Fundamental</td>
+										<td style="border:1px solid black;">SUMBT: Slot-Utterance Matching for Universal and Scalable Belief Tracking</td>
+									</tr>
+
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											SC-LSTM
+										</td>
+										<td style="border:1px solid black;">Fundamental</td>
+										<td style="border:1px solid black;">Semantically conditioned lstm-based natural language generation for spoken dialogue systems</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											BERTNLU
+										</td>
+										<td style="border:1px solid black;">Fundamental</td>
+										<td style="border:1px solid black;">ConvLab-2: An Open-Source Toolkit for Building, Evaluating, and Diagnosing Dialogue Systems</td>
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											MDRG
+										</td>
+										<td style="border:1px solid black;">Fundamental</td>
+										<td style="border:1px solid black;">Towards end-to-end multi-domain dialogue modelling</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											UBAR
+										</td>
+										<td style="border:1px solid black;">Fundamental</td>
+										<td style="border:1px solid black;">owards fully end-to-end task-oriented dialog system with gpt-</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											GPT2 for Chinese chitchat
+										</td>
+										<td style="border:1px solid black;">Fundamental</td>
+										<td style="border:1px solid black;">Chinese chitchat</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											TransResNet-Ret
+										</td>
+										<td style="border:1px solid black;">Multimodal</td>
+										<td style="border:1px solid black;">Image-Chat: Engaging Grounded Conversations</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											MMBERT
+										</td>
+										<td style="border:1px solid black;">Multimodal</td>
+										<td style="border:1px solid black;">Selecting Stickers in Open-Domain Dialogue through Multitask Learning</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											MAE
+										</td>
+										<td style="border:1px solid black;">Multimodal</td>
+										<td style="border:1px solid black;">MMCoQA: Conversational Question Answering over Text, Tables, and Images</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											PICa
+										</td>
+										<td style="border:1px solid black;">Multimodal</td>
+										<td style="border:1px solid black;">An empirical study of gpt-3 for few-shot knowledge-based vqa</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											LingUNet 
+										</td>
+										<td style="border:1px solid black;">Multimodal</td>
+										<td style="border:1px solid black;">Where Are You? Localization from Embodied Dialog</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											DifffKS
+										</td>
+										<td style="border:1px solid black;">Knowledgeable</td>
+										<td style="border:1px solid black;">Difference-aware Knowledge Selection for Knowledge-grounded Conversation Generation</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											KE-Blender
+										</td>
+										<td style="border:1px solid black;">Knowledgeable</td>
+										<td style="border:1px solid black;">Knowledge Enhanced Fine-Tuning for Better Handling Unseen Entities in Dialogue Generation</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											NPH
+										</td>
+										<td style="border:1px solid black;">Knowledgeable</td>
+										<td style="border:1px solid black;">Neural Path Hunter: Reducing Hallucination in Dialogue Systems via Path Grounding</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											BERTQA
+										</td>
+										<td style="border:1px solid black;">Knowledgeable</td>
+										<td style="border:1px solid black;">Dense Passage Retrieval for Open-Domain Question Answering</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											KEMP
+										</td>
+										<td style="border:1px solid black;">Controllable</td>
+										<td style="border:1px solid black;">OpenDialKG: Explainable Conversational Reasoning with Attention-based Walks over Knowledge Graphs</td>
+										
+									</tr>
+									<tr style="border:1px solid black;">
+										<td style="border:1px solid black;">
+											RobertaClassifier
+										</td>
+										<td style="border:1px solid black;">Controllable</td>
+										<td style="border:1px solid black;">On the Safety of Conversational Models: Taxonomy, Dataset, and Benchmark</td>
+										
+									</tr>
+
+									</tbody>
+								</table>
+								
+
+								
 								<br>
 
 								<!--						</div>-->
@@ -481,7 +569,7 @@
 	
 							<div class="col-12 col-lg-auto text-center text-lg-end">
 								<div class="copyrights-menu copyright-links clearfix">
-									<a href="index.html">Home</a>/<a href="paradigm.html">Paradigm</a>/<a href="framework.html">Framework</a>
+									<a href="index.html">Home</a>/<a href="Framework.html">Framework</a>/<a href="Get-started.html">Get Started</a>
 								</div>
 							</div>
 						</div>
